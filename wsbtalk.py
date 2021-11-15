@@ -14,12 +14,6 @@ ts = TimeSeries(key, output_format='pandas')
 plt.style.use('default')
 
 
-reddit = praw.Reddit(client_id="tDk4i02L9gIk8w",
-                     client_secret="E1rtw8mlCleaaBOeuvkQZLgnWyGT1g",
-                     username="nano1999",
-                     password="Pingapinga1",
-                     user_agent="deeeepValuee")
-
 subreddit = reddit.subreddit('wallstreetbets')
 top_subreddit = subreddit.rising(limit=100)
 words = []
@@ -39,17 +33,10 @@ for title in words:
     for word in title:
         if word.isupper() and word not in notStonks:
             maybeStonks.append(word)
-stonks = []
+stonks = set(maybeStonks)
 indexes = []
-for stonk in maybeStonks:
-    index = 0
-    for i in range(len(maybeStonks)):
-        if(stonk == maybeStonks[i]):
-            index = i
-    if(index not in indexes):
-        indexes.append(index)
-        stonks.append(stonk)
-        print(stonk + ": " + str(maybeStonks.count(maybeStonks[index])))
+for i in range(len(stonks)):
+       print(stonks[i], "seen", str(maybeStonks.count(maybeStonks[index], "times in WSB"))
 
 sign = input(
     "which of these stocks intrests you? \n type quit to exit the program ")
