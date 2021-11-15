@@ -7,9 +7,6 @@ from datetime import datetime
 from alpha_vantage.timeseries import TimeSeries
 
 
-key = 'A8JZ69J154CEQR2W'
-ts = TimeSeries(key, output_format='pandas')
-#newsAPi = newsApiClient(api_key='539ff4120e9c4cc7b15030408deb9ab4')
 
 plt.style.use('default')
 
